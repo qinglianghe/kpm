@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message User {
+    string id = 1;
+    string email = 2;
+    string passwd = 3;
+    bool admin = 4;
+    string name = 5;
+    string image = 6;
+}
+
+message Blog {
+    string id = 1;
+    string user_id = 2;
+    string user_name = 3;
+    string user_image = 4;
+    string title = 5;
+    string summary = 6;
+    string content = 7;
+}
+
+message Comment {
+    string id = 1;
+    string blog_id = 2;
+    string user_id = 3;
+    string user_name = 4;
+    string user_image = 5;
+    string content = 6;
+}
