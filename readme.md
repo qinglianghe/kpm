@@ -1,6 +1,6 @@
 ## kpm
 
-这是由一个使用python的异步IO编写的，将生产者使用[message.proto](https://github.com/qinglianghe/aiokafka-protobuf-mysql/blob/master/src/message.proto)定义的protobuf的message序列化后、写入到kafka中。消费者使用从kafka中获取message、进行protobuf的反序列化后、通过ORM框架将数据保存到MySql对应的数据表中。
+这是一个使用python的异步IO编写的，将生产者使用[message.proto](https://github.com/qinglianghe/aiokafka-protobuf-mysql/blob/master/src/message.proto)定义的protobuf的message序列化后、写入到kafka中。消费者从kafka中获取message、进行protobuf的反序列化后、通过ORM框架将数据保存到MySQL对应的数据表中。
 
 如图：
 
@@ -16,7 +16,7 @@
 
 ### message.py
 
-[message.py](https://github.com/qinglianghe/kpm/blob/master/src/message.py)定义protobuf message对应的类：提供反序列化、通过调用orm的保存数据到mysql中的接口。
+[message.py](https://github.com/qinglianghe/kpm/blob/master/src/message.py)定义protobuf message对应的类：提供反序列化、通过调用orm的保存数据到MySQL中的接口。
 
 ### models.py
 
@@ -24,7 +24,7 @@
 
 ### orm.py
 
-[orm.py](https://github.com/qinglianghe/kpm/blob/master/src/orm.py)使用aiomysql实现的ORM框架，将Mysql数据库的一行记录映射为一个对象，一个类对应一个表，写代码更简单，不用直接操作SQL语句：
+[orm.py](https://github.com/qinglianghe/kpm/blob/master/src/orm.py)使用aiomysql实现的ORM框架，将MySQL数据库的一行记录映射为一个对象，一个类对应一个表，写代码更简单，不用直接操作SQL语句：
 
 - 调用`create_pool`创建对应的数据库连接池
 
